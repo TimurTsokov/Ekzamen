@@ -1,10 +1,18 @@
 @import '_normalize';
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,900');
 
-$text-font: 'Raleway', sans-serif;
-$text-color: #262626;
-$offset: 30px;
+@font-face {
+  font-family: 'aleo regular';
+  src: url("../fonts/aleo-regular-webfont.eot");
+  src: url("../fonts/aleo-regular-webfont.woff2") format("woff2"), url("../fonts/aleo-regular-webfont.woff") format("woff"), url("../fonts/aleo-regular-webfont.svg") format("svg"), url("../fonts/aleo-regular-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
+$text-font: 'Josefin Sans', sans-serif;
+$aleo: 'aleo regular', sans-serif;
+$text-color: #ffffff;
+
+$form: #999999;
 $red: #ff6033;
 $tourquise: #00b1b1;
 $blue: #70bfff;
@@ -13,6 +21,7 @@ $siniy: #5585a2;
 $green: #96b92c;
 $fiolet: #b07cf7;
 $red2: #f72b3b;
+$bg-nav: #5474fd;
 * {
   box-sizing: border-box;
 }
@@ -23,38 +32,45 @@ html {
 }
 
 body {
-  font: 300 1.7rem/1.7 $text-font;
+  font: 400 1.6rem/1.6 $text-font;
   min-height: 100%;
   color: $text-color;
 }
 
 .container {
-  width: 1200px;
+  width: 1110px;
   margin: 0 auto;
   padding: 0 15px;
-}
-
-.header {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-}
-
-.logo {
-  font-family: Pacifico;
-  text-decoration: none;
-  color: $text-color;
-  font-size: 5rem;
-  &--white {
-    color: #b9b9b9;
+  &--svg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 }
 
+.logo {
+  font-family: $text-font;
+  text-decoration: none;
+  color: $text-color;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .nav {
+  font-family: $aleo;
+  background-color: $bg-nav;
+  height: 100px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  &-cont {
+    width: 1110px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   &__list {
     li {
       display: inline-block;
@@ -67,13 +83,12 @@ body {
     color: $text-color;
     font-size: 1.5rem;
     font-weight: bold;
-    border-top: 3px solid transparent;
+    border: 2px solid transparent;
     padding: 5px 0;
     transition: all .4s linear;
     &:hover,
-    &:focus,
-    &.active {
-      border-color: #ff6033;
+    &:focus {
+      border-color: $text-color;
     }
   }
 }
@@ -85,49 +100,41 @@ body {
     background-size: cover;
     background-position: center;
   }
+  &--broun {
+    background-color: #333333;
+  }
   &--100h {
     height: 100vh;
     padding: 100px 0;
   }
-  &--about {
-    background: $tourquise;
-  }
-  &--services {
-    background: $blue;
-  }
-  &--color-white {
-    color: #fff;
-  }
-  &--gallery {
-    background: $orange;
-  }
-  &--blog {
-    background: $fiolet;
-  }
-  &-black {
-    color: $text-color;
-  }
+
   &__title {
     font-weight: 700;
-    font-size: 9rem;
+    font-size: 4.8rem;
     line-height: 1;
-    margin: $offset 0;
-    &--medium {
-      font-size: 6rem;
-      font-weight: 900;
-    }
-    &--center {
-      position: absolute;
-      top: 40%;
-      left: 0;
+    margin: 20px 0;
+    text-transform: uppercase;
+    &--aleo {
+      font-family: $aleo;
+      font-size: 3.6rem;
+      font-weight: 400;
+      margin-bottom: 60px;
     }
     &--small {
-      font-size: 4.0rem;
+      font-size: 3.6rem;
+    }
+    &--fz20 {
+      font-size: 2rem;
     }
   }
+  &__subtitle {
+    font-size: 2.2rem;
+  }
   &__text {
-    margin-bottom: $offset;
-    margin-top: 10px;
+    margin-bottom: 60px;
+    &--country {
+      margin-bottom: 30px;
+    }
     &--1-2 {
       width: 50%;
       margin: 0 auto;
@@ -151,30 +158,17 @@ body {
   &__btn {
     text-transform: uppercase;
     color: #fff;
-    font-size: 2rem;
-    padding: 10px;
+    font-family: $aleo;
+    font-size: 1.6rem;
+    padding: 25px 40px;
     text-decoration: none;
-    background: $red;
-    width: 200px;
+    //background-color: rgba(73, 107, 254, 0.7);
+    background: linear-gradient(60deg, #496bfe 35%, #5474fd 36%);
     display: inline-block;
     text-align: center;
     box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .3);
     transition: all .4s linear;
-    &--view {
-      &-red {
-        background: $red2;
-      }
-      background: $siniy;
-      padding: 15px 40px;
-      &:hover,
-      &:focus {
-        box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, .3);
-      }
-    }
-    &--subs {
-      background: $green;
-      padding: 15px 30px;
-    }
+
     &:hover,
     &:focus {
       box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, .3);
@@ -192,13 +186,15 @@ body {
   &__scroll {
     text-align: center;
     &--link {
-      svg {
-        transition: all .4s ease-in-out;
-      }
-      svg:hover,
-      svg:focus {
-        transform: rotateX(180deg);
-      }
+      display: block;
+      color: $text-color;
+      text-decoration: none;
+      font-size: 1.4rem;
+      margin: 0;
+    }
+    &:hover,
+    &:focus {
+      transform: scale(1.2);
     }
   }
   &__mail {
@@ -214,21 +210,15 @@ body {
 .flex-row {
   display: flex;
   justify-content: space-between;
-  //align-items: center;
+  align-items: center;
   &--wrap {
     flex-wrap: wrap;
     //align-content: space-between;
-    //justify-content: center;
-    a {
-      margin: 15px;
-      img {
-        box-shadow: 0 0 15px 3px rgba(0, 0, 0, .3);
-      }
-    }
-  }
-  &--blog {
+    justify-content: center;
 
   }
+
+
   &--column {
     //flex-direction: column;
     //justify-content: center;
@@ -237,12 +227,78 @@ body {
   }
   &__item {
     flex: 0 0 50%;
+    &--bg {
+      background-color: rgba(57, 57, 57, 0.6);
+      padding: 50px 30px;
+    }
+    &--flex {
+      display: flex;
+      //justify-content: center;
+      align-items: stretch;
 
+      //align-content: center;
+    }
+
+    &__form {
+      //margin-bottom: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      input {
+        color: $form;
+        font-size: 1.4rem;
+        text-align: center;
+        padding: 25px 0;
+        width: 35%;
+        border: 2px solid transparent;
+        &:hover,
+        &:focus {
+          border-color: #ffffff;
+        }
+      }
+
+      button {
+        color: #ffffff;
+        font-family: $aleo;
+        font-size: 1.4rem;
+        font-weight: 400;
+        text-align: center;
+        padding: 25px 35px;
+        background: $bg-nav;
+        text-transform: uppercase;
+        margin: -5px;
+        //min-height: 68px;
+        border: 2px solid #ffffff;
+        cursor: pointer;
+        position: relative;
+        &:before {
+          content: '';
+          position: absolute;
+          background-image: url(../img/search.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          top: 0;
+          bottom: 0;
+          right: 5%;
+          left: 80%;
+        }
+        &:hover,
+        &:active {
+          background: $form;
+        }
+      }
+    }
     &--1-3 {
       flex: 0 0 30%;
+      text-align: center;
     }
     &--2-5 {
       flex: 0 0 40%;
+      .image {
+        margin-left: 120px;
+      }
     }
     &--1-4 {
       flex: 0 0 25%;
@@ -256,7 +312,6 @@ body {
     &--100 {
       flex: 0 0 100%;
       text-align: center;
-      padding-bottom: 50px;
     }
 
     &--pos {
