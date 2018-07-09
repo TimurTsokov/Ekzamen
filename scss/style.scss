@@ -10,7 +10,7 @@
 
 $text-font: 'Josefin Sans', sans-serif;
 $aleo: 'aleo regular', sans-serif;
-$text-color: #ffffff;
+$text-color: #e8e8e8;
 
 $form: #999999;
 $red: #ff6033;
@@ -132,6 +132,21 @@ body {
   }
   &__text {
     margin-bottom: 60px;
+    &--margin {
+      margin: 50px 0 0 0;
+      text-indent: 30px;
+      position: relative;
+      p {
+        max-height: 180px;
+        overflow: hidden;
+      }
+      .fa {
+        color: #5474fd;
+        position: absolute;
+        left: -30px;
+        top: -10px;
+      }
+    }
     &--country {
       margin-bottom: 30px;
     }
@@ -218,7 +233,6 @@ body {
 
   }
 
-
   &--column {
     //flex-direction: column;
     //justify-content: center;
@@ -234,18 +248,14 @@ body {
     &--100p {
       flex: 0 0 100%;
       display: flex;
-      //justify-content: center;
-      //align-items: stretch;
-      //
-      //align-content: center;
+      height: 285px;
     }
     &__text {
       background-color: #333333;
-      padding: 0 50px;
+      padding: 0 60px;
     }
 
     &__form {
-      //margin-bottom: 100px;
       display: flex;
       align-items: center;
       justify-content: center;
