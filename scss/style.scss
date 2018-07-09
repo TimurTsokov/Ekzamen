@@ -231,12 +231,13 @@ body {
       background-color: rgba(57, 57, 57, 0.6);
       padding: 50px 30px;
     }
-    &--flex {
+    &--100p {
+      flex: 0 0 100%;
       display: flex;
       //justify-content: center;
       align-items: stretch;
 
-      //align-content: center;
+      align-content: center;
     }
 
     &__form {
