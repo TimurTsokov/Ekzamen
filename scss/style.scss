@@ -235,9 +235,13 @@ body {
       flex: 0 0 100%;
       display: flex;
       //justify-content: center;
-      align-items: stretch;
-
-      align-content: center;
+      //align-items: stretch;
+      //
+      //align-content: center;
+    }
+    &__text {
+      background-color: #333333;
+      padding: 0 50px;
     }
 
     &__form {
