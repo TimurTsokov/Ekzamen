@@ -24,6 +24,7 @@ $red2: #f72b3b;
 $bg-nav: #5474fd;
 * {
   box-sizing: border-box;
+  transition: all 0.4s ease-in-out;
 }
 
 html {
